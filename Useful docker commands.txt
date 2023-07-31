@@ -1,0 +1,22 @@
+docker --version
+
+docker ps = list runing containers 
+
+docker pull [image] = download image
+
+docker images = show downloaded images
+
+docker rmi [image] = remove image
+
+docker run -d -p 4444:4444 --name [container-name] -v /dev/shm:/dev/shm selenium/standalone-chrome:latest = create container from image with special option (/dev/shm:/dev/shm) due to browser shared memory issues 
+
+docker exec -it [container-name] /bin/bash = log into container shell
+
+docker cp [file to copy] [container-name]:[container-directory-path]
+
+Dockerfile = name for docker script
+	Copy host-directory container-directory (no need to pass the container name)
+
+docker build -t [image-tag] . = where "-t" is used to set a image tag and "." is used to set the current directory as the source of the Dockerfile
+
+docker stop [container-name] + docker rm [container-name] = stop and erase container from machine 

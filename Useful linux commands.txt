@@ -1,0 +1,36 @@
+pwd = shows the current directory
+sudo su - = use the root user
+exit = logout from root user back to main user
+ls -a = shows hidden files
+cat = shows file content
+vi = enables file edition
+which = shows the path to the executable of a command
+tar xzvf [file name] = unpack a file
+cat /etc/group = verify existing groups
+usermod -aG [group] [user] = give permission on the group to the user
+cp -r = copy files recursively
+rm -r = delete files recursively
+ssh-keygen = generate ssh keys
+ssh-copy-id [user]@[ip-adress] = store ssh key to the target host
+ssh [user]@[ip-adress] = log into the target host
+logout = disconnect from ssh connected host
+passwd = set user password
+logout and sudo su- = return to root folder after navigating to other paths
+root/.bash_profile = file with environment variables
+etc/ssh/sshd_config = file with ssh config (allow password authentication)
+	*after modification run the "service sshd reload" command
+	
+./* = caminho atual
+
+*Tip: download software using root user inside the root home folder
+	 and
+	execute commands with the regular user 
+	give privilege to regular user: 
+		`echo "[user] ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers`
+
+*Tip:
+	To change java version: https://stackoverflow.com/questions/53378483/installing-openjdk-11-on-centos-using-yum
+
+*Tip:
+	To execute kubernets or ansible, the ssh of the machine should be pressent
+in the authoized_keys of the machine (ssh-copy-id [user]@localhost) 
