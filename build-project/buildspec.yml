@@ -6,13 +6,10 @@ phases:
       java: corretto17
   pre_build:
     commands:
-      - echo pre_build phase...
-      - echo Installing Chrome
-      - wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-      - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | tee /etc/apt/sources.list.d/google.list
-      - apt-get -qq update
-      - apt-get -qq install -y google-chrome-stable
-      - google-chrome --version
+      - echo Nothing to do in the pre_build phase...
+      - sudo curl https://intoli.com/install-google-chrome.sh | bash
+      - sudo mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
+      - google-chrome --version && which google-chrome
   build:
     commands:
       - echo Build started on `date`
