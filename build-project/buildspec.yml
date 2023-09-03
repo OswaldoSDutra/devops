@@ -7,6 +7,8 @@ phases:
   pre_build:
     commands:
       - echo Nothing to do in the pre_build phase...
+      - sudo yum install -y libXcursor libXdamage libcups libXss libXrandr \
+        cups-libs dbus-glib libXinerama cairo cairo-gobject pango
   build:
     commands:
       - echo Build started on `date`
