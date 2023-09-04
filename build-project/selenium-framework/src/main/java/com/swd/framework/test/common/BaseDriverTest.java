@@ -14,6 +14,9 @@ public abstract class BaseDriverTest {
     protected void start(){
         this.driver = driverFactory.createWebDriver();
         this.driver.manage().window().maximize();
+
+        System.out.println("+----- DEBUG LOG -----+");
+        System.out.printf("Current window size: %s \n",this.driver.manage().window().getSize());
     }
     protected void stop(){
         this.driver.quit();
