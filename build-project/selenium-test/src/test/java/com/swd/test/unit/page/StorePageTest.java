@@ -25,7 +25,7 @@ public class StorePageTest extends BaseTestNGDriverTest {
     }
 
     @Test
-    public void shouldSearchProducts() throws InterruptedException {
+    public void shouldSearchProducts() {
         driver.navigate().to("https://askomdch.com/store/");
 
         storePage.search("blue");
@@ -35,7 +35,7 @@ public class StorePageTest extends BaseTestNGDriverTest {
     }
 
     @Test
-    public void shouldAddAndGoToCart() throws InterruptedException {
+    public void shouldAddAndGoToCart() {
         driver.navigate().to("https://askomdch.com/store/");
 
         storePage.search("blue");
