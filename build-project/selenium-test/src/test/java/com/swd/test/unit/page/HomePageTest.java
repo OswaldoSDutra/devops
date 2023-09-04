@@ -1,12 +1,10 @@
 package com.swd.test.unit.page;
 
-import com.swd.page.HomePage;
 import com.swd.framework.adapters.browser.webdriver.ChromeDriverFactory;
 import com.swd.framework.test.common.BaseTestNGDriverTest;
+import com.swd.page.HomePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
 
 public class HomePageTest extends BaseTestNGDriverTest {
 
@@ -27,10 +25,9 @@ public class HomePageTest extends BaseTestNGDriverTest {
     }
 
     @Test
-    public void shouldSearch() throws IOException {
+    public void shouldSearch() {
         driver.navigate().to("https://askomdch.com/");
 
-        homePage.takeScreenShot();
         homePage.clickStoreLink();
 
         Assert.assertEquals(driver.getCurrentUrl(),"https://askomdch.com/store/");
