@@ -7,11 +7,7 @@ phases:
   pre_build:
     commands:
       - echo pre build phase started on `date`
-      - curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-      - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
-      - apt-get -y update
-      - apt-get -y install google-chrome-stable
-      - google-chrome --version && which google-chrome
+      - curl https://intoli.com/install-google-chrome.sh | bash
   build:
     commands:
       - echo build phase started on `date`
