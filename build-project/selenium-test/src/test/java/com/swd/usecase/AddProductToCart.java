@@ -20,7 +20,7 @@ public class AddProductToCart {
         this.storePage = storePage;
     }
 
-    private void accessStorePage() throws IOException {
+    private void accessStorePage()  {
         driver.navigate().to("https://askomdch.com/");
         storePage = homePage.clickStoreLink();
     }
@@ -29,7 +29,7 @@ public class AddProductToCart {
         storePage.search(product);
     }
 
-    public AddProductToCart addProduct(String product) throws IOException {
+    public AddProductToCart addProduct(String product)  {
         accessStorePage();
         storePage.clickAddToCartBtn(product);
         storePage.clickViewCart();
