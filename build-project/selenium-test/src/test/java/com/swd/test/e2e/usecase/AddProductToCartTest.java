@@ -8,6 +8,8 @@ import com.swd.usecase.AddProductToCart;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class AddProductToCartTest extends BaseTestNGDriverTest {
 
     private AddProductToCart useCase;
@@ -29,7 +31,7 @@ public class AddProductToCartTest extends BaseTestNGDriverTest {
     }
 
     @Test
-    public void shouldAddProduct(){
+    public void shouldAddProduct() throws IOException {
         useCase.addProduct("Blue Shoes");
         Assert.assertEquals(driver.getCurrentUrl(),"https://askomdch.com/cart/");
     }

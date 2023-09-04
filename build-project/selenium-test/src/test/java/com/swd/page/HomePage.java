@@ -3,6 +3,9 @@ package com.swd.page;
 import com.swd.framework.adapters.page.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.io.IOException;
 
 public class HomePage extends BasePage {
 
@@ -12,8 +15,9 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public StorePage clickStoreLink(){
-        driver.findElement(storeMenuLink).click();
+    public StorePage clickStoreLink() throws IOException {
+        takeScreenShot();
+        wait.until(ExpectedConditions.elementToBeClickable(storeMenuLink)).click();
         return new StorePage(driver);
     }
 }

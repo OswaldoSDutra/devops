@@ -6,6 +6,8 @@ import com.swd.framework.test.common.BaseTestNGDriverTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 public class HomePageTest extends BaseTestNGDriverTest {
 
     private HomePage homePage;
@@ -25,8 +27,10 @@ public class HomePageTest extends BaseTestNGDriverTest {
     }
 
     @Test
-    public void shouldSearch(){
+    public void shouldSearch() throws IOException {
         driver.navigate().to("https://askomdch.com/");
+
+        homePage.takeScreenShot();
         homePage.clickStoreLink();
 
         Assert.assertEquals(driver.getCurrentUrl(),"https://askomdch.com/store/");

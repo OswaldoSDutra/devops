@@ -4,6 +4,8 @@ import com.swd.page.HomePage;
 import com.swd.page.StorePage;
 import org.openqa.selenium.WebDriver;
 
+import java.io.IOException;
+
 public class AddProductToCart {
 
     private WebDriver driver;
@@ -18,7 +20,7 @@ public class AddProductToCart {
         this.storePage = storePage;
     }
 
-    private void accessStorePage(){
+    private void accessStorePage() throws IOException {
         driver.navigate().to("https://askomdch.com/");
         storePage = homePage.clickStoreLink();
     }
@@ -27,7 +29,7 @@ public class AddProductToCart {
         storePage.search(product);
     }
 
-    public AddProductToCart addProduct(String product){
+    public AddProductToCart addProduct(String product) throws IOException {
         accessStorePage();
         storePage.clickAddToCartBtn(product);
         storePage.clickViewCart();

@@ -14,7 +14,11 @@ public class ChromeDriverFactory implements WebDriverFactory {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options=new ChromeOptions();
-        options.addArguments("headless");
+        options.addArguments("--headless=new");
+
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--ignore-certificate-errors");
+        options.addArguments("--allow-running-insecure-content");
 
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--no-sandbox"); // Bypass OS security model
