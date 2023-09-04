@@ -7,8 +7,8 @@ phases:
   pre_build:
     commands:
       - echo pre build phase started on `date`
-      - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      - yum install ./google-chrome-stable_current_amd64.deb
+      - wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+      - sudo yum localinstall google-chrome-stable_current_x86_64.rpm
   build:
     commands:
       - echo build phase started on `date`
